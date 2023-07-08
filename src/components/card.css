@@ -1,0 +1,17 @@
+.cardDiv {
+  display: flex;
+  margin-top: 25px;
+  margin-left: 67px;
+}
+.textDiv {
+  width: 600px;
+  border: 1px solid black;
+  margin-left: 5px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.delBtn {
+  height: 50px;
+  width: 50px;
+}

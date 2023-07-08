@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import InputFeild from "./components/input";
+import "./App.css";
+import Card from "./components/card";
+import { useState } from "react";
 
 function App() {
+  const [dataToMap, setDataToMap] = useState([]);
+  let compToRender = dataToMap.map((data) => {
+    return <Card content={data} removeCard={removeCard}></Card>;
+  });
+
+  function makeCard(someData) {
+    let newData = [...dataToMap, someData];
+    setDataToMap(newData);
+  }
+
+  function removeCard(valueOfCard) {
+    let filtered = dataToMap.filter((val) => {
+      return val != valueOfCard;
+    });
+    setDataToMap(filtered);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <button onClick={() => setDataToMap([])}>DEL ALL</button>
+      <div className="todoBox">
+        <InputFeild makeCard={makeCard}></InputFeild>
+        {compToRender}
+      </div>
     </div>
   );
 }
