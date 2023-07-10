@@ -7,6 +7,10 @@ function InputFeild({ makeCard }) {
   }
 
   function addHandler() {
+    if (task == "") {
+      alert("Enter Some Task");
+      return;
+    }
     makeCard(task);
     setTask("");
   }

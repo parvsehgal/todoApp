@@ -4,7 +4,12 @@ import Card from "./components/card";
 import { useState } from "react";
 
 function App() {
-  const [dataToMap, setDataToMap] = useState([]);
+  const [dataToMap, setDataToMap] = useState([
+    "first",
+    "second",
+    "third",
+    "fourth",
+  ]);
   let compToRender = dataToMap.map((data) => {
     return <Card content={data} removeCard={removeCard}></Card>;
   });
