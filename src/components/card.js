@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
 import "./card.css";
-
-function Card({ removeCard, content, id }) {
-  let [active, setActive] = useState(null);
-
+function Card({ removeCard, content }) {
+  const [active, setActive] = useState(null);
   function delHandler() {
     removeCard(content);
   }
   function compHandler() {
-    console.log("hi");
     setActive(content);
   }
   return (

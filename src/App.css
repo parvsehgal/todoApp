@@ -11,9 +11,6 @@
   width: 800px;
   background-color: white;
   border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
 }
 .App-logo {
   height: 40vmin;
