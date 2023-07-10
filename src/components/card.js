@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./card.css";
 
-function Card({ removeCard, content }) {
+function Card({ removeCard, content, id }) {
   let [active, setActive] = useState(null);
+
   function delHandler() {
     removeCard(content);
   }

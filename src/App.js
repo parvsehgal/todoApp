@@ -10,8 +10,8 @@ function App() {
     "third",
     "fourth",
   ]);
-  let compToRender = dataToMap.map((data) => {
-    return <Card content={data} removeCard={removeCard}></Card>;
+  let compToRender = dataToMap.map((data, index) => {
+    return <Card content={data} removeCard={removeCard} id={index}></Card>;
   });
 
   function makeCard(someData) {
